@@ -1,4 +1,19 @@
-# Nu primesc notă pentru că nu am pus titlu și descriere
+# ArcticDash
+
+ArcticDash is a top-down 2D arcade game written in C++ using object-oriented programming principles.
+
+The player controls a character on a frozen map and must collect all the fruit in the level while avoiding enemies. To defend themselves, the player can create and break ice blocks that block the enemies' path.
+
+## Gameplay features
+
+- **Conveyor belts** that automatically move the player and enemies in a set direction
+- **Ovens** that melt nearby ice blocks
+- **Special fruit** that grant temporary abilities
+- **Four enemy types**, each with its own behavior
+
+## Goal
+
+A level is won when all the fruit has been collected. If an enemy touches the player, the level is lost.
 
 ### Folosiți template-ul corespunzător grupei voastre!
 
