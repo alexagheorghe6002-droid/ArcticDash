@@ -64,7 +64,8 @@ include(cmake/RegisterTests.cmake)
 add_library(${MAIN_LIBRARY_NAME} STATIC
         src/Position.cpp
         src/Fruit.cpp
-        src/Enemy.cpp)
+        src/Enemy.cpp
+        src/Tile.cpp)
 
 # NOTE: update EXECUTABLE_NAME in .github/workflows/cmake.yml when changing name here
 add_executable(${MAIN_EXECUTABLE_NAME}
