@@ -11,15 +11,15 @@ enum class TileType { IceWall, IceFloor, ThinIce, Water };
 
 class Tile {
 public:
-   explicit Tile(TileType T);
+    explicit Tile(TileType T);
 
     friend std::ostream &operator<<(std::ostream &os, const Tile &tile);
 
+    void stepOn();
 
 private:
     int timesStepped_ = 0;
     TileType type_;
-
 };
 
 #endif //OOP_TILE_H
