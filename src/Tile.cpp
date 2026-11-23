@@ -18,15 +18,14 @@ void Tile::stepOn() {
 }
 
 std::ostream &operator<<(std::ostream &os, const Tile &tile) {
-    os << "Tile type is: ";
     switch (tile.type_) {
-        case TileType::IceWall: os << "IceWall";
+        case TileType::IceWall: os << '#';
             break;
-        case TileType::Water: os << "Water";
+        case TileType::Water: os << 'W';
             break;
-        case TileType::IceFloor: os << "IceFloor";
+        case TileType::IceFloor: os << '.';
             break;
-        case TileType::ThinIce: os << "ThinIce";
+        case TileType::ThinIce: os << '~';
             break;
     }
     return os;
