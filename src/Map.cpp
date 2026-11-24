@@ -40,3 +40,16 @@ std::ostream &operator<<(std::ostream &os, const Map &map) {
     }
     return os;
 }
+
+bool Map::isWall(const Position& pos) const {
+    int x = pos.getX();
+    int y = pos.getY();
+
+    if (y < 0 || y >= static_cast<int>(grid_.size()) ||
+        x < 0 || x >= static_cast<int>(grid_[y].size())) {
+        return true;
+        }
+
+    return grid_[y][x].isWall();
+}
+

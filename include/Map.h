@@ -6,12 +6,14 @@
 #define OOP_MAP_H
 #include <vector>
 #include "Tile.h"
+#include "Position.h"
 #include <string>
 
 class Map {
 public:
     explicit Map(const std::vector<std::string>&);
     friend std::ostream &operator<<(std::ostream &os, const Map &map);
+    bool isWall(const Position& pos) const;
 private:
     std::vector<std::vector<Tile>>grid_;
 };

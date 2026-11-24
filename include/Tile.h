@@ -17,9 +17,12 @@ public:
 
     void stepOn();
 
+    bool isWall() const;
+
 private:
     int timesStepped_ = 0;
     TileType type_;
 };
+
 
 #endif //OOP_TILE_H

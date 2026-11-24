@@ -12,6 +12,9 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, const Position& pos);
 
+    int getX() const;
+    int getY() const;
+
 private:
     int x_=0;
     int y_=0;

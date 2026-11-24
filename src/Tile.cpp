@@ -30,3 +30,7 @@ std::ostream &operator<<(std::ostream &os, const Tile &tile) {
     }
     return os;
 }
+
+bool Tile::isWall() const {
+    return type_ == TileType::IceWall;
+}

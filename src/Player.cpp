@@ -31,3 +31,24 @@ std::ostream &operator<<(std::ostream &os, const Player &player) {
         return os;
     }
 
+void Player::move(const Map &map, const Direction &dir){
+    direction_ = dir;
+    int x=pos_.getX();
+    int y=pos_.getY();
+    switch (dir) {
+        case Direction::Right: x++;
+            break;
+        case Direction::Left: x--;
+            break;
+        case Direction::Down: y++;
+            break;
+        case Direction::Up: y--;
+            break;
+    }
+    Position next(x, y);
+    if (!map.isWall(next)) {
+        pos_=next;
+    }
+
+}
+
