@@ -15,6 +15,9 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Map &map);
     bool isWall(const Position& pos) const;
     void iceTransform(const Position& pos);
+    Map(const Map &other);
+    Map &operator=(const Map &other);
+    ~Map();
 private:
     std::vector<std::vector<Tile>>grid_;
 };

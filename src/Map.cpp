@@ -41,14 +41,14 @@ std::ostream &operator<<(std::ostream &os, const Map &map) {
     return os;
 }
 
-bool Map::isWall(const Position& pos) const {
+bool Map::isWall(const Position &pos) const {
     int x = pos.getX();
     int y = pos.getY();
 
     if (y < 0 || y >= static_cast<int>(grid_.size()) ||
         x < 0 || x >= static_cast<int>(grid_[y].size())) {
         return true;
-        }
+    }
 
     return grid_[y][x].isWall();
 }
@@ -60,8 +60,19 @@ void Map::iceTransform(const Position &pos) {
     if (y < 0 || y >= static_cast<int>(grid_.size()) ||
         x < 0 || x >= static_cast<int>(grid_[y].size())) {
         return;
-        }
+    }
 
     grid_[y][x].iceTransform();
 }
 
+Map::Map(const Map &other) : grid_(other.grid_) {
+}
+
+Map &Map::operator=(const Map &other) {
+    if (this != &other) {
+        grid_ = other.grid_;
+    }
+    return *this;
+}
+
+Map::~Map() { }
