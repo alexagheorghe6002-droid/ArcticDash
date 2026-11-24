@@ -14,6 +14,7 @@ public:
     explicit Map(const std::vector<std::string>&);
     friend std::ostream &operator<<(std::ostream &os, const Map &map);
     bool isWall(const Position& pos) const;
+    void iceTransform(const Position& pos);
 private:
     std::vector<std::vector<Tile>>grid_;
 };

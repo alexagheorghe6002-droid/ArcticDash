@@ -19,6 +19,8 @@ public:
 
     bool isWall() const;
 
+    void iceTransform();
+
 private:
     int timesStepped_ = 0;
     TileType type_;

@@ -34,3 +34,14 @@ std::ostream &operator<<(std::ostream &os, const Tile &tile) {
 bool Tile::isWall() const {
     return type_ == TileType::IceWall;
 }
+
+void Tile::iceTransform() {
+    if (type_ == TileType::IceWall) {
+        type_ = TileType::IceFloor;
+    }
+    else {
+        if (type_ == TileType::IceFloor) {
+            type_ = TileType::IceWall;
+        }
+    }
+}

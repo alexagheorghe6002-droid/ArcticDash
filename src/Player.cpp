@@ -52,3 +52,18 @@ void Player::move(const Map &map, const Direction &dir){
 
 }
 
+void Player::iceTransform(Map& map) {
+    int x=pos_.getX();
+    int y=pos_.getY();
+    switch (direction_) {
+        case Direction::Right: x++;
+            break;
+        case Direction::Left: x--;
+            break;
+        case Direction::Down: y++;
+            break;
+        case Direction::Up: y--;
+            break;
+    }
+    map.iceTransform(Position(x, y));
+}
