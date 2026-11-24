@@ -13,6 +13,8 @@ class Game {
     public:
      Game(const Map &map, const Player &player, const std::vector<Enemy> &enemies, const std::vector<Fruit> &fruits);
     friend std::ostream &operator<<(std::ostream &os, const Game &game);
+    void movePlayer(Direction dir);
+    void playerIceTransform();
 private:
 
     Map map_;

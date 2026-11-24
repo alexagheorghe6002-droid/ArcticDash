@@ -31,10 +31,14 @@ int main() {
     nlohmann::json date = nlohmann::json::parse(fisier);
     std::vector<std::string> rows = date["map"].get<std::vector<std::string>>();
     Map map(rows);
-    
+
     int px = date["player"]["x"].get<int>();
     int py = date["player"]["y"].get<int>();
     Direction pdir = parseDirection(date["player"]["dir"].get<std::string>());
+
+    Map copie(map);
+    copie = map;
+    std::cout << copie;
 
     Player player(Position(px, py), pdir);
 
@@ -55,5 +59,20 @@ int main() {
     }
     Game game(map, player, enemies, fruits);
     std::cout << game;
+
+    game.movePlayer(Direction::Right);
+    std::cout << game;
+
+    game.movePlayer(Direction::Down);
+    game.playerIceTransform();
+    std::cout << game;
+
+    game.movePlayer(Direction::Right);
+    std::cout << game;
+
+    game.movePlayer(Direction::Left);
+    game.movePlayer(Direction::Right);
+    std::cout << game;
     return 0;
 }
+

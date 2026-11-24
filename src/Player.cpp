@@ -67,3 +67,7 @@ void Player::iceTransform(Map& map) {
     }
     map.iceTransform(Position(x, y));
 }
+
+const Position& Player::getPosition() const {
+    return pos_;
+}

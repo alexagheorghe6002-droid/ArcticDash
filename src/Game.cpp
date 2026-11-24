@@ -19,3 +19,11 @@ std::ostream &operator<<(std::ostream &os, const Game &game) {
     return os;
 }
 
+void Game::movePlayer(Direction dir) {
+    player1_.move(map_, dir);
+    map_.stepOn(player1_.getPosition());
+}
+
+void Game::playerIceTransform() {
+    player1_.iceTransform(map_);
+}

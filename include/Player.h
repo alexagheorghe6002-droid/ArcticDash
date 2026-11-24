@@ -17,6 +17,7 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Player &player);
     void move(const Map &map, const Direction &dir);
     void iceTransform(Map& map);
+    const Position& getPosition() const;
 private:
     int points_=0;
     bool alive_=true;

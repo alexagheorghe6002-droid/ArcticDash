@@ -76,3 +76,15 @@ Map &Map::operator=(const Map &other) {
 }
 
 Map::~Map() { }
+
+void Map::stepOn(const Position& pos) {
+    int x = pos.getX();
+    int y = pos.getY();
+
+    if (y < 0 || y >= static_cast<int>(grid_.size()) ||
+        x < 0 || x >= static_cast<int>(grid_[y].size())) {
+        return;
+        }
+
+    grid_[y][x].stepOn();
+}

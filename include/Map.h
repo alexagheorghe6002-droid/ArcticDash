@@ -18,6 +18,7 @@ public:
     Map(const Map &other);
     Map &operator=(const Map &other);
     ~Map();
+    void stepOn(const Position& pos);
 private:
     std::vector<std::vector<Tile>>grid_;
 };
