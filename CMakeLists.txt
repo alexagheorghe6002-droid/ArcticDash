@@ -66,7 +66,8 @@ add_library(${MAIN_LIBRARY_NAME} STATIC
         src/Fruit.cpp
         src/Enemy.cpp
         src/Tile.cpp
-        src/internal/Map.cpp)
+        src/Map.cpp
+        src/Player.cpp)
 
 # NOTE: update EXECUTABLE_NAME in .github/workflows/cmake.yml when changing name here
 add_executable(${MAIN_EXECUTABLE_NAME}
